@@ -1,10 +1,10 @@
 version: 0.2
 
-# env:
-#   parameter-store:
-#     DOCKER_REGISTRY_USERNAME: /myapp/docker-credentials/username
-#     DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
-#     DOCKER_REGISTRY_URL: /myapp/docker-registry/url
+env:
+  parameter-store:
+    DOCKER_REGISTRY_USERNAME: /myapp/docker-credentials/username
+    DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
+    DOCKER_REGISTRY_URL: /myapp/docker-registry/url
 
 phases:
   install:
@@ -18,10 +18,6 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Docker Registry...
-      - DOCKER_REGISTRY_USERNAME = "er.arpit79@gmail.com"
-      - DOCKER_REGISTRY_PASSWORD = "9259944753@Ar"
-      - DOCKER_REGISTRY_URL = "https://hub.docker.com/"
-
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
       - IMAGE_REPO_NAME="tws-aws-cicd-demo"
       - IMAGE_NAME="$DOCKER_REGISTRY_USERNAME/$IMAGE_REPO_NAME"
