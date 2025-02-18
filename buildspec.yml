@@ -18,9 +18,9 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Docker Registry...
-      - DOCKER_REGISTRY_USERNAME: ArpitPandit
-      - DOCKER_REGISTRY_PASSWORD: 9259944753@Ar
-      - DOCKER_REGISTRY_URL: https://hub.docker.com/
+      - DOCKER_REGISTRY_USERNAME = "ArpitPandit"
+      - DOCKER_REGISTRY_PASSWORD = "9259944753@Ar"
+      - DOCKER_REGISTRY_URL = "https://hub.docker.com/"
 
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
       - IMAGE_REPO_NAME="tws-aws-cicd-demo"
