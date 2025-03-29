@@ -3,7 +3,7 @@ version: 0.2
 env:
   parameter-store:
     DOCKER_REGISTRY_USERNAME: "er.arpit79@gmail.com"
-    DOCKER_REGISTRY_PASSWORD: "9259944753#Arr"
+    DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
     DOCKER_REGISTRY_URL: "https://hub.docker.com/repositories/arpitpandit"
 
 phases:
